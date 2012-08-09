@@ -1,0 +1,35 @@
+<div data-role="page" data-add-back-btn="true">
+
+  <div data-role="header" data-position="inline">
+    <%= link_to "Back", :action => :index %>
+    <h1><%= @theme.title %></h1>
+    <%= link_to "Edit", :action => :edit, :id => @theme.object %>
+  </div>
+
+  <div data-role="content">
+    <table>
+      
+      <tr>
+    	<td class="itemLabel">Title</td>
+        <td class="itemValue"><%= @theme.title%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">Description</td>
+        <td class="itemValue"><%= @theme.description%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">Category</td>
+        <td class="itemValue"><%= @theme.category%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">TimeControl</td>
+        <td class="itemValue"><%= @theme.time_control%></td>
+      </tr>
+      
+    </table>
+  </div>
+
+</div>

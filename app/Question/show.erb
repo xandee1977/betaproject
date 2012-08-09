@@ -1,0 +1,74 @@
+<div data-role="page" data-add-back-btn="false">
+
+  <div data-role="header" data-position="inline">
+    <h1><%= @question.subject_id %></h1>
+    <a href="<%= url_for :action => :index %>" class="ui-btn-left" data-icon="arrow-l" data-direction="reverse">
+      Back
+    </a>
+    <a href="<%= url_for :action => :edit, :id => @question.object %>" class="ui-btn-right" data-icon="star">
+      Edit
+    </a>
+  </div>
+
+  <div data-role="content">
+    <ul data-role="listview">
+      
+          <li>
+            <div class="itemLabel">SubjectId</div>
+            <div class="itemValue"><%= @question.subject_id %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">ThemeId</div>
+            <div class="itemValue"><%= @question.theme_id %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">Sentence</div>
+            <div class="itemValue"><%= @question.sentence %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">OptionOne</div>
+            <div class="itemValue"><%= @question.option_one %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">OptionTwo</div>
+            <div class="itemValue"><%= @question.option_two %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">OptionThree</div>
+            <div class="itemValue"><%= @question.option_three %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">OptionFour</div>
+            <div class="itemValue"><%= @question.option_four %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">OptionFive</div>
+            <div class="itemValue"><%= @question.option_five %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">Answer</div>
+            <div class="itemValue"><%= @question.answer %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">Explanation</div>
+            <div class="itemValue"><%= @question.explanation %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">TimeControl</div>
+            <div class="itemValue"><%= @question.time_control %></div>
+          </li>
+      
+    </ul>
+  </div>
+
+</div>

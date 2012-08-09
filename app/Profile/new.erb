@@ -1,0 +1,50 @@
+<div data-role="page">
+
+  <div data-role="header" data-position="inline">
+    <h1>New <%= @profile.title %></h1>
+    <a href="<%= url_for :action => :index %>" class="ui-btn-left" data-icon="back" data-direction="reverse">
+      Cancel
+    </a>
+  </div>
+
+  <div data-role="content">
+    <form method="POST" action="<%= url_for :action => :create %>">
+      <input type="hidden" name="id" value="<%= @profile.object %>"/>
+
+      
+          <div data-role="fieldcontain">
+            <label for="profile[user_id]" class="fieldLabel">User</label>
+            <input type="text" id="profile[user_id]" name="profile[user_id]" <%= placeholder("User") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="profile[firstname]" class="fieldLabel">Firstname</label>
+            <input type="text" id="profile[firstname]" name="profile[firstname]" <%= placeholder("Firstname") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="profile[lastname]" class="fieldLabel">Lastname</label>
+            <input type="text" id="profile[lastname]" name="profile[lastname]" <%= placeholder("Lastname") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="profile[biography]" class="fieldLabel">Biography</label>
+            <input type="text" id="profile[biography]" name="profile[biography]" <%= placeholder("Biography") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="profile[avatar]" class="fieldLabel">Avatar</label>
+            <input type="text" id="profile[avatar]" name="profile[avatar]" <%= placeholder("Avatar") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="profile[time_control]" class="fieldLabel">Time control</label>
+            <input type="text" id="profile[time_control]" name="profile[time_control]" <%= placeholder("Time control") %> />
+          </div>
+      
+
+      <input type="submit" value="Create"/>
+    </form>
+  </div>
+
+</div>

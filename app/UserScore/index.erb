@@ -1,0 +1,27 @@
+<div data-role="page">
+
+	<div data-role="header" data-position="inline">
+    <h1>UserScores</h1>
+    <a href="<%= Rho::RhoConfig.start_path %>" class="ui-btn-left" data-icon="home" data-direction="reverse" <%= "data-ajax='false'" if is_bb6 %>>
+      Home
+    </a>
+    <a href="<%= url_for :action => :new %>" class="ui-btn-right" data-icon="plus">
+      New
+    </a>
+	</div>
+
+  <div data-role="content">
+    <ul data-role="listview">
+      <% @userscores.each do |userscore| %>
+      
+          <li>
+            <a href="<%= url_for :action => :show, :id => userscore.object %>">
+              <%= userscore.user_id %>
+            </a>
+          </li>
+      
+      <% end %>
+    </ul>
+  </div>
+
+</div>

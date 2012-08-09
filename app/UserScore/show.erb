@@ -1,0 +1,34 @@
+<div data-role="page" data-add-back-btn="false">
+
+  <div data-role="header" data-position="inline">
+    <h1><%= @userscore.user_id %></h1>
+    <a href="<%= url_for :action => :index %>" class="ui-btn-left" data-icon="arrow-l" data-direction="reverse">
+      Back
+    </a>
+    <a href="<%= url_for :action => :edit, :id => @userscore.object %>" class="ui-btn-right" data-icon="star">
+      Edit
+    </a>
+  </div>
+
+  <div data-role="content">
+    <ul data-role="listview">
+      
+          <li>
+            <div class="itemLabel">UserId</div>
+            <div class="itemValue"><%= @userscore.user_id %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">Score</div>
+            <div class="itemValue"><%= @userscore.score %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">TimeControl</div>
+            <div class="itemValue"><%= @userscore.time_control %></div>
+          </li>
+      
+    </ul>
+  </div>
+
+</div>

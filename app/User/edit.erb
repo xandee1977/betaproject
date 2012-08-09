@@ -1,0 +1,41 @@
+<div data-role="page">
+
+  <div data-role="header" data-position="inline">
+    <h1>Edit <%= @user.username %></h1>
+    <a href="<%= url_for :action => :show, :id => @user.object %>" class="ui-btn-left" data-icon="back" data-direction="reverse">
+      Cancel
+    </a>
+    <a href="<%= url_for :action => :delete, :id => @user.object %>" class="ui-btn-right" data-icon="delete" data-direction="reverse">
+      Delete
+    </a>
+  </div>
+
+  <div data-role="content">
+    <form method="POST" action="<%= url_for :action => :update %>">
+      <input type="hidden" name="id" value="<%= @user.object %>"/>
+      
+          <div data-role="fieldcontain">
+            <label for="user[username]" class="fieldLabel">Username</label>
+            <input type="text" id="user[username]" name="user[username]" value="<%= @user.username %>" <%= placeholder( "Username" ) %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="user[password]" class="fieldLabel">Password</label>
+            <input type="text" id="user[password]" name="user[password]" value="<%= @user.password %>" <%= placeholder( "Password" ) %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="user[email]" class="fieldLabel">Email</label>
+            <input type="text" id="user[email]" name="user[email]" value="<%= @user.email %>" <%= placeholder( "Email" ) %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="user[time_control]" class="fieldLabel">Time control</label>
+            <input type="text" id="user[time_control]" name="user[time_control]" value="<%= @user.time_control %>" <%= placeholder( "Time control" ) %> />
+          </div>
+      
+      <input type="submit" value="Update"/>
+    </form>
+  </div>
+
+</div>

@@ -1,0 +1,76 @@
+<div data-role="page">
+
+  <div data-role="header" data-position="inline">
+    <h1>Edit <%= @question.subject_id %></h1>
+    <a href="<%= url_for :action => :show, :id => @question.object %>" class="ui-btn-left" data-icon="back" data-direction="reverse">
+      Cancel
+    </a>
+    <a href="<%= url_for :action => :delete, :id => @question.object %>" class="ui-btn-right" data-icon="delete" data-direction="reverse">
+      Delete
+    </a>
+  </div>
+
+  <div data-role="content">
+    <form method="POST" action="<%= url_for :action => :update %>">
+      <input type="hidden" name="id" value="<%= @question.object %>"/>
+      
+          <div data-role="fieldcontain">
+            <label for="question[subject_id]" class="fieldLabel">Subject</label>
+            <input type="text" id="question[subject_id]" name="question[subject_id]" value="<%= @question.subject_id %>" <%= placeholder( "Subject" ) %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="question[theme_id]" class="fieldLabel">Theme</label>
+            <input type="text" id="question[theme_id]" name="question[theme_id]" value="<%= @question.theme_id %>" <%= placeholder( "Theme" ) %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="question[sentence]" class="fieldLabel">Sentence</label>
+            <input type="text" id="question[sentence]" name="question[sentence]" value="<%= @question.sentence %>" <%= placeholder( "Sentence" ) %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="question[option_one]" class="fieldLabel">Option one</label>
+            <input type="text" id="question[option_one]" name="question[option_one]" value="<%= @question.option_one %>" <%= placeholder( "Option one" ) %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="question[option_two]" class="fieldLabel">Option two</label>
+            <input type="text" id="question[option_two]" name="question[option_two]" value="<%= @question.option_two %>" <%= placeholder( "Option two" ) %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="question[option_three]" class="fieldLabel">Option three</label>
+            <input type="text" id="question[option_three]" name="question[option_three]" value="<%= @question.option_three %>" <%= placeholder( "Option three" ) %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="question[option_four]" class="fieldLabel">Option four</label>
+            <input type="text" id="question[option_four]" name="question[option_four]" value="<%= @question.option_four %>" <%= placeholder( "Option four" ) %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="question[option_five]" class="fieldLabel">Option five</label>
+            <input type="text" id="question[option_five]" name="question[option_five]" value="<%= @question.option_five %>" <%= placeholder( "Option five" ) %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="question[answer]" class="fieldLabel">Answer</label>
+            <input type="text" id="question[answer]" name="question[answer]" value="<%= @question.answer %>" <%= placeholder( "Answer" ) %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="question[explanation]" class="fieldLabel">Explanation</label>
+            <input type="text" id="question[explanation]" name="question[explanation]" value="<%= @question.explanation %>" <%= placeholder( "Explanation" ) %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="question[time_control]" class="fieldLabel">Time control</label>
+            <input type="text" id="question[time_control]" name="question[time_control]" value="<%= @question.time_control %>" <%= placeholder( "Time control" ) %> />
+          </div>
+      
+      <input type="submit" value="Update"/>
+    </form>
+  </div>
+
+</div>

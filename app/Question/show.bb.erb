@@ -1,0 +1,70 @@
+<div data-role="page" data-add-back-btn="true">
+
+  <div data-role="header" data-position="inline">
+    <%= link_to "Back", :action => :index %>
+    <h1><%= @question.subject_id %></h1>
+    <%= link_to "Edit", :action => :edit, :id => @question.object %>
+  </div>
+
+  <div data-role="content">
+    <table>
+      
+      <tr>
+    	<td class="itemLabel">SubjectId</td>
+        <td class="itemValue"><%= @question.subject_id%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">ThemeId</td>
+        <td class="itemValue"><%= @question.theme_id%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">Sentence</td>
+        <td class="itemValue"><%= @question.sentence%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">OptionOne</td>
+        <td class="itemValue"><%= @question.option_one%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">OptionTwo</td>
+        <td class="itemValue"><%= @question.option_two%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">OptionThree</td>
+        <td class="itemValue"><%= @question.option_three%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">OptionFour</td>
+        <td class="itemValue"><%= @question.option_four%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">OptionFive</td>
+        <td class="itemValue"><%= @question.option_five%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">Answer</td>
+        <td class="itemValue"><%= @question.answer%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">Explanation</td>
+        <td class="itemValue"><%= @question.explanation%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">TimeControl</td>
+        <td class="itemValue"><%= @question.time_control%></td>
+      </tr>
+      
+    </table>
+  </div>
+
+</div>

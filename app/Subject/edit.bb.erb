@@ -1,0 +1,39 @@
+<div data-role="page">
+
+  <div data-role="header" data-position="inline">
+    <%= link_to "Back", :action => :show, :id => @subject.object %>
+    <h1>Edit <%= @subject.theme_id%></h1>
+    <%= link_to "Delete", :action => :delete, :id => @subject.object %>
+  </div>
+
+  <div data-role="content">
+    <form method="POST" action="<%= url_for :action => :update %>">
+      <input type="hidden" name="id" value="<%= @subject.object %>"/>
+      <table>
+          
+          <tr>
+              <td class="itemLabel">Theme: </td>
+              <td class="itemValue"><input type="text" name="subject[theme_id]" value="<%= @subject.theme_id %>"/></td>
+          </tr>
+          
+          <tr>
+              <td class="itemLabel">Title: </td>
+              <td class="itemValue"><input type="text" name="subject[title]" value="<%= @subject.title %>"/></td>
+          </tr>
+          
+          <tr>
+              <td class="itemLabel">Description: </td>
+              <td class="itemValue"><input type="text" name="subject[description]" value="<%= @subject.description %>"/></td>
+          </tr>
+          
+          <tr>
+              <td class="itemLabel">Time control: </td>
+              <td class="itemValue"><input type="text" name="subject[time_control]" value="<%= @subject.time_control %>"/></td>
+          </tr>
+          
+      </table>
+      <input type="submit" value="Update"/>
+    </form>
+  </div>
+
+</div>

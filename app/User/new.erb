@@ -1,0 +1,40 @@
+<div data-role="page">
+
+  <div data-role="header" data-position="inline">
+    <h1>New <%= @user.title %></h1>
+    <a href="<%= url_for :action => :index %>" class="ui-btn-left" data-icon="back" data-direction="reverse">
+      Cancel
+    </a>
+  </div>
+
+  <div data-role="content">
+    <form method="POST" action="<%= url_for :action => :create %>">
+      <input type="hidden" name="id" value="<%= @user.object %>"/>
+
+      
+          <div data-role="fieldcontain">
+            <label for="user[username]" class="fieldLabel">Username</label>
+            <input type="text" id="user[username]" name="user[username]" <%= placeholder("Username") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="user[password]" class="fieldLabel">Password</label>
+            <input type="text" id="user[password]" name="user[password]" <%= placeholder("Password") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="user[email]" class="fieldLabel">Email</label>
+            <input type="text" id="user[email]" name="user[email]" <%= placeholder("Email") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="user[time_control]" class="fieldLabel">Time control</label>
+            <input type="text" id="user[time_control]" name="user[time_control]" <%= placeholder("Time control") %> />
+          </div>
+      
+
+      <input type="submit" value="Create"/>
+    </form>
+  </div>
+
+</div>

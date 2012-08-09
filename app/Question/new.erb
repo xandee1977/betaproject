@@ -1,0 +1,75 @@
+<div data-role="page">
+
+  <div data-role="header" data-position="inline">
+    <h1>New <%= @question.title %></h1>
+    <a href="<%= url_for :action => :index %>" class="ui-btn-left" data-icon="back" data-direction="reverse">
+      Cancel
+    </a>
+  </div>
+
+  <div data-role="content">
+    <form method="POST" action="<%= url_for :action => :create %>">
+      <input type="hidden" name="id" value="<%= @question.object %>"/>
+
+      
+          <div data-role="fieldcontain">
+            <label for="question[subject_id]" class="fieldLabel">Subject</label>
+            <input type="text" id="question[subject_id]" name="question[subject_id]" <%= placeholder("Subject") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="question[theme_id]" class="fieldLabel">Theme</label>
+            <input type="text" id="question[theme_id]" name="question[theme_id]" <%= placeholder("Theme") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="question[sentence]" class="fieldLabel">Sentence</label>
+            <input type="text" id="question[sentence]" name="question[sentence]" <%= placeholder("Sentence") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="question[option_one]" class="fieldLabel">Option one</label>
+            <input type="text" id="question[option_one]" name="question[option_one]" <%= placeholder("Option one") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="question[option_two]" class="fieldLabel">Option two</label>
+            <input type="text" id="question[option_two]" name="question[option_two]" <%= placeholder("Option two") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="question[option_three]" class="fieldLabel">Option three</label>
+            <input type="text" id="question[option_three]" name="question[option_three]" <%= placeholder("Option three") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="question[option_four]" class="fieldLabel">Option four</label>
+            <input type="text" id="question[option_four]" name="question[option_four]" <%= placeholder("Option four") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="question[option_five]" class="fieldLabel">Option five</label>
+            <input type="text" id="question[option_five]" name="question[option_five]" <%= placeholder("Option five") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="question[answer]" class="fieldLabel">Answer</label>
+            <input type="text" id="question[answer]" name="question[answer]" <%= placeholder("Answer") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="question[explanation]" class="fieldLabel">Explanation</label>
+            <input type="text" id="question[explanation]" name="question[explanation]" <%= placeholder("Explanation") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="question[time_control]" class="fieldLabel">Time control</label>
+            <input type="text" id="question[time_control]" name="question[time_control]" <%= placeholder("Time control") %> />
+          </div>
+      
+
+      <input type="submit" value="Create"/>
+    </form>
+  </div>
+
+</div>

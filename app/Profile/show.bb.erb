@@ -1,0 +1,45 @@
+<div data-role="page" data-add-back-btn="true">
+
+  <div data-role="header" data-position="inline">
+    <%= link_to "Back", :action => :index %>
+    <h1><%= @profile.user_id %></h1>
+    <%= link_to "Edit", :action => :edit, :id => @profile.object %>
+  </div>
+
+  <div data-role="content">
+    <table>
+      
+      <tr>
+    	<td class="itemLabel">UserId</td>
+        <td class="itemValue"><%= @profile.user_id%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">Firstname</td>
+        <td class="itemValue"><%= @profile.firstname%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">Lastname</td>
+        <td class="itemValue"><%= @profile.lastname%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">Biography</td>
+        <td class="itemValue"><%= @profile.biography%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">Avatar</td>
+        <td class="itemValue"><%= @profile.avatar%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">TimeControl</td>
+        <td class="itemValue"><%= @profile.time_control%></td>
+      </tr>
+      
+    </table>
+  </div>
+
+</div>

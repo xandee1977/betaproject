@@ -1,0 +1,39 @@
+<div data-role="page" data-add-back-btn="false">
+
+  <div data-role="header" data-position="inline">
+    <h1><%= @theme.title %></h1>
+    <a href="<%= url_for :action => :index %>" class="ui-btn-left" data-icon="arrow-l" data-direction="reverse">
+      Back
+    </a>
+    <a href="<%= url_for :action => :edit, :id => @theme.object %>" class="ui-btn-right" data-icon="star">
+      Edit
+    </a>
+  </div>
+
+  <div data-role="content">
+    <ul data-role="listview">
+      
+          <li>
+            <div class="itemLabel">Title</div>
+            <div class="itemValue"><%= @theme.title %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">Description</div>
+            <div class="itemValue"><%= @theme.description %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">Category</div>
+            <div class="itemValue"><%= @theme.category %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">TimeControl</div>
+            <div class="itemValue"><%= @theme.time_control %></div>
+          </li>
+      
+    </ul>
+  </div>
+
+</div>
