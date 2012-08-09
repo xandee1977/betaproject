@@ -10,4 +10,5 @@ class UserScore
   property :user_id, :text
   property :score, :integer
   property :time_control, :datetime
+  
 end

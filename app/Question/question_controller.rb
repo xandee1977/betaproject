@@ -74,6 +74,26 @@ class QuestionController < Rho::RhoController
     @question = Question.find(@params["id"])
     if @question.answer == @params["opt"]
       @message = "Parabéns você acertou!"
+      # incrementa o score
+      
+      ## DEVIA ESTAR DENTRO DE UM METODO MAS NAO ROLOU >>
+      # ID STATICO ATE IMPLEMENTAR O LOGIN
+      system_user_id = '113770868853085.84'
+      time_control = Time.now.strftime('%Y-%m-%d %I:%M:%S')      
+      @user_score = UserScore.find(:conditions => {:user_id => system_user_id}).first
+      if @user_score == nil
+        @user_score = UserScore.new({:score => 1, :user_id => system_user_id, :time_control => time_control})
+      else
+        # Atualiza o score
+        @user_score.score = @user_score.score + 1
+        # Atualiza o time_control
+        @user_score.time_control = time_control
+      end
+      ## <<< DEVIA ESTAR DENTRO DE UM METODO MAS NAO ROLOU >>
+
+      # Salva o score
+      @user_score.save
+
       @correct = true
     else
       @message = "Opa Resposta errada."

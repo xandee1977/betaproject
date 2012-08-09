@@ -124,4 +124,8 @@ module ApplicationHelper
   def caller_request_query_to_hash
     @caller_request = Rho::JSON.parse(@params['caller_request']) if @params['caller_request']
   end
+
+  def system_user_id
+    return '113770868853085.84'
+  end
 end
