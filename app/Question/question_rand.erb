@@ -1,0 +1,73 @@
+<style>
+  div#qz_sentence {
+    font-size: 20px;
+    padding: 5px;
+  }
+
+  ul.quiz_options li {
+    list-style-position:inside;
+    margin: 0px;
+    padding: 0px;
+  }
+
+  ul.quiz_options li {
+    width:100%;
+    display:block;
+    margin-bottom:10px;
+  }
+
+
+  ul.quiz_options li a {
+    padding-top:7px;
+    padding-bottom:7px;
+    width:100%;
+    display:block;
+    color:white!important;    
+  }
+    
+</style>
+
+<%# Tela de resposta de questão %>
+<div data-role="page" data-add-back-btn="false">
+
+  <div data-role="header" data-position="inline">
+    <h1><%= @question.sentence %></h1>
+    <a href="<%= url_for :action => :index %>" class="ui-btn-left" data-icon="arrow-l" data-direction="reverse">
+      Back
+    </a>
+    <a href="<%= url_for :action => :edit, :id => @question.object %>" class="ui-btn-right" data-icon="star">
+      Edit
+    </a>
+  </div>
+
+  <div data-role="content">
+    <div>
+      <%= @question.sentence %>
+    </div>
+
+    <ul class="quiz_options">
+      <% if @question.option_one != '' %>
+        <li><a href="/app/Question/verify_answer/?opt=one&id=<%= @question.object %>">a) <%= @question.option_one %></a></li>
+      <% end %>
+
+      <% if @question.option_two != '' %>
+        <li><a href="/app/Question/verify_answer/?opt=two&id=<%= @question.object %>">b) <%= @question.option_two %></a></li>
+      <% end %>
+
+      <% if @question.option_three != '' %>
+        <li><a href="/app/Question/verify_answer/?opt=three&id=<%= @question.object %>">c) <%= @question.option_three %></a></li>
+      <% end %>
+      
+      <% if @question.option_four != '' %>
+        <li><a href="/app/Question/verify_answer/?opt=four&id=<%= @question.object %>">d) <%= @question.option_four %></a></li>
+      <% end %>
+      
+      <% if @question.option_five != '' %>
+        <li><a href="/app/Question/verify_answer/?opt=five&id=<%= @question.object %>">e) <%= @question.option_five %></a></li>
+      <% end %>
+
+    </ul>
+    
+  </div>
+
+</div>

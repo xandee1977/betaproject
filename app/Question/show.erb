@@ -1,7 +1,7 @@
 <div data-role="page" data-add-back-btn="false">
 
   <div data-role="header" data-position="inline">
-    <h1><%= @question.subject_id %></h1>
+    <h1><%= @question.sentence %></h1>
     <a href="<%= url_for :action => :index %>" class="ui-btn-left" data-icon="arrow-l" data-direction="reverse">
       Back
     </a>
@@ -14,13 +14,13 @@
     <ul data-role="listview">
       
           <li>
-            <div class="itemLabel">SubjectId</div>
-            <div class="itemValue"><%= @question.subject_id %></div>
+            <div class="itemLabel">Theme</div>
+            <div class="itemValue"><%= Theme.find(@question.theme_id).title %></div>
           </li>
-      
+                    
           <li>
-            <div class="itemLabel">ThemeId</div>
-            <div class="itemValue"><%= @question.theme_id %></div>
+            <div class="itemLabel">Subject</div>
+            <div class="itemValue"><%= Subject.find(@question.subject_id).title %></div>
           </li>
       
           <li>

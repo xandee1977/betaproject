@@ -9,14 +9,15 @@
   <div data-role="content">
     <table>
       
+     
       <tr>
-    	<td class="itemLabel">SubjectId</td>
-        <td class="itemValue"><%= @question.subject_id%></td>
+    	<td class="itemLabel">Theme</td>
+        <td class="itemValue"><%= Theme.find(@question.theme_id).title %></td>
       </tr>
-      
+
       <tr>
-    	<td class="itemLabel">ThemeId</td>
-        <td class="itemValue"><%= @question.theme_id%></td>
+      <td class="itemLabel">Subject</td>
+        <td class="itemValue"><%= Subject.find(@question.subject_id).title %></td>
       </tr>
       
       <tr>

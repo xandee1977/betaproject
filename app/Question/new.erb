@@ -10,18 +10,26 @@
   <div data-role="content">
     <form method="POST" action="<%= url_for :action => :create %>">
       <input type="hidden" name="id" value="<%= @question.object %>"/>
-
-      
-          <div data-role="fieldcontain">
-            <label for="question[subject_id]" class="fieldLabel">Subject</label>
-            <input type="text" id="question[subject_id]" name="question[subject_id]" <%= placeholder("Subject") %> />
-          </div>
-      
+      <input type="hidden" name="question[time_control]" value="<%= Time.now.strftime('%Y-%m-%d %I:%M:%S') %>" id="question[time_control]" />
+         
           <div data-role="fieldcontain">
             <label for="question[theme_id]" class="fieldLabel">Theme</label>
-            <input type="text" id="question[theme_id]" name="question[theme_id]" <%= placeholder("Theme") %> />
+            <select id="question[theme_id]" name="question[theme_id]">
+              <% Theme.find(:all).each do |theme| %>
+                <option value="<%= theme.object %>"><%= theme.title %></option>
+              <% end %>
+             </select>
           </div>
-      
+
+          <div data-role="fieldcontain">
+            <label for="question[subject_id]" class="fieldLabel">Subject</label>
+            <select id="question[subject_id]" name="question[subject_id]">
+              <% Subject.find(:all).each do |subject| %>
+                <option value="<%= subject.object %>"><%= subject.title %></option>
+              <% end %>
+             </select>
+          </div>
+
           <div data-role="fieldcontain">
             <label for="question[sentence]" class="fieldLabel">Sentence</label>
             <input type="text" id="question[sentence]" name="question[sentence]" <%= placeholder("Sentence") %> />
@@ -61,12 +69,6 @@
             <label for="question[explanation]" class="fieldLabel">Explanation</label>
             <input type="text" id="question[explanation]" name="question[explanation]" <%= placeholder("Explanation") %> />
           </div>
-      
-          <div data-role="fieldcontain">
-            <label for="question[time_control]" class="fieldLabel">Time control</label>
-            <input type="text" id="question[time_control]" name="question[time_control]" <%= placeholder("Time control") %> />
-          </div>
-      
 
       <input type="submit" value="Create"/>
     </form>

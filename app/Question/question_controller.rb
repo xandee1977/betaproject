@@ -55,4 +55,31 @@ class QuestionController < Rho::RhoController
     @question.destroy if @question
     redirect :action => :index  
   end
+
+  # Exibe uma questão randomica
+  # TODO: randomizar entre as questões que o usuario
+  # nao respondeu aind
+  def question_rand
+    @question = Question.find(:all).shuffle.first
+    if @question
+      render :action => :question_rand, :back => url_for(:action => :index)
+    else
+      redirect :action => :index
+    end
+  end
+
+  # Recebe a resposta selecionada e a certa
+  # compara e exibe o resultado
+  def verify_answer
+    @question = Question.find(@params["id"])
+    if @question.answer == @params["opt"]
+      @message = "Parabéns você acertou!"
+      @correct = true
+    else
+      @message = "Opa Resposta errada."
+      @correct = false
+    end
+    render :action => :verify_answer, :back => url_for(:action => :question_rand)
+  end
+
 end
