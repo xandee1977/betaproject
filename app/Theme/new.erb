@@ -10,31 +10,29 @@
   <div data-role="content">
     <form method="POST" action="<%= url_for :action => :create %>">
       <input type="hidden" name="id" value="<%= @theme.object %>"/>
-
+      <input type="hidden" name="theme[time_control]" value="<%= Time.now.strftime('%Y-%m-%d %I:%M:%S') %>" id="theme[time_control]" />
       
-          <div data-role="fieldcontain">
-            <label for="theme[title]" class="fieldLabel">Title</label>
-            <input type="text" id="theme[title]" name="theme[title]" <%= placeholder("Title") %> />
-          </div>
-      
-          <div data-role="fieldcontain">
-            <label for="theme[description]" class="fieldLabel">Description</label>
-            <input type="text" id="theme[description]" name="theme[description]" <%= placeholder("Description") %> />
-          </div>
-      
-          <div data-role="fieldcontain">
-            <label for="theme[category]" class="fieldLabel">Category</label>
-            <input type="text" id="theme[category]" name="theme[category]" <%= placeholder("Category") %> />
-          </div>
-      
-          <div data-role="fieldcontain">
-            <label for="theme[time_control]" class="fieldLabel">Time control</label>
-            <input type="text" id="theme[time_control]" name="theme[time_control]" <%= placeholder("Time control") %> />
-          </div>
-      
+      <div data-role="fieldcontain">
+        <label for="theme[title]" class="fieldLabel">Title</label>
+        <input type="text" id="theme[title]" name="theme[title]" <%= placeholder("Title") %> />
+      </div>
+  
+      <div data-role="fieldcontain">
+        <label for="theme[description]" class="fieldLabel">Description</label>
+        <input type="text" id="theme[description]" name="theme[description]" <%= placeholder("Description") %> />
+      </div>
+  
+      <div data-role="fieldcontain">
+        <label for="theme[category]" class="fieldLabel">Category</label>
+        <select id="theme[category]" name="theme[category]">
+          <option value="Humana">Humana</option>
+          <option value="Exata">Exata</option>
+        </select>
+      </div>
 
       <input type="submit" value="Create"/>
     </form>
   </div>
 
 </div>
+

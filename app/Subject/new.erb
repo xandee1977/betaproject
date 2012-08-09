@@ -10,13 +10,17 @@
   <div data-role="content">
     <form method="POST" action="<%= url_for :action => :create %>">
       <input type="hidden" name="id" value="<%= @subject.object %>"/>
+      <input type="hidden" id="subject[time_control]" name="subject[time_control]" value="<%= Time.now.strftime('%Y-%m-%d %I:%M:%S') %>" />
 
-      
           <div data-role="fieldcontain">
             <label for="subject[theme_id]" class="fieldLabel">Theme</label>
-            <input type="text" id="subject[theme_id]" name="subject[theme_id]" <%= placeholder("Theme") %> />
+            <select id="subject[theme_id]" name="subject[theme_id]">
+              <% Theme.find(:all).each do |theme| %>
+                <option value="<%= theme.object %>"><%= theme.title %></option>
+              <% end %>
+             </select>
           </div>
-      
+
           <div data-role="fieldcontain">
             <label for="subject[title]" class="fieldLabel">Title</label>
             <input type="text" id="subject[title]" name="subject[title]" <%= placeholder("Title") %> />
@@ -26,13 +30,6 @@
             <label for="subject[description]" class="fieldLabel">Description</label>
             <input type="text" id="subject[description]" name="subject[description]" <%= placeholder("Description") %> />
           </div>
-      
-          <div data-role="fieldcontain">
-            <label for="subject[time_control]" class="fieldLabel">Time control</label>
-            <input type="text" id="subject[time_control]" name="subject[time_control]" <%= placeholder("Time control") %> />
-          </div>
-      
-
       <input type="submit" value="Create"/>
     </form>
   </div>
